@@ -1,0 +1,115 @@
+body{
+    margin:0;
+}
+
+a{
+    text-transform: none;
+    text-decoration: none;
+}
+
+.button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    color:white;
+    width: 150px;
+}
+
+.button:hover{
+    opacity: 0.8;
+    transition: 1s;
+}
+
+.logo__text{
+    font-family: 'Cinzel', serif;
+    line-height: 0;
+    font-size: 24px;
+}
+
+
+.header__header-wrapper{
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 15px;
+}
+
+.header__button-a{
+    color: white;
+}
+
+.header__user{
+    font-family: "Open Sans";
+}
+
+.messages{
+    background-color: rgb(237, 238, 240);
+}
+
+.messages__wrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 50%;
+    min-width: 340px;
+    margin:0 auto;
+}
+
+.message{
+    width: 200px;
+}
+
+.message--mine{
+    align-self: end;
+}
+
+.message__headline{
+    color:rgb(42, 88, 133);
+    font-family: 'Blinker';
+    font-weight: 700;
+    font-size: 16.5px;
+}
+
+.message__time{
+    color:rgb(129, 140, 153);
+    font-size: 16px;
+}
+
+.message__text{
+    font-family: 'Open Sans';
+}
+
+.send-message__wrapper {
+    
+}
+.send-message__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.send-message__input {
+    padding:9px 10px 10px 13px;
+    border: 1px solid rgba(144, 144, 144, 0.5);
+    box-shadow: 0px 0px 10px rgb(144 144 144);
+}
+
+.send-message__input:focus-visible {
+    border: 1px solid rgba(144, 144, 144, 1);
+    outline: none;
+    transition: 0.1s;
+}
+
+.send-message__button {
+    border: none;
+    background: none;
+    
+}
+
+.send-message__button-img{
+    height: 20px;
+}

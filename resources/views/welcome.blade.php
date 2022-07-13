@@ -5,95 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel</title>
         <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@700&Cinzel:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-        <style>
-            body{
-                margin:0;
-            }
-
-            a{
-                text-transform: none;
-                text-decoration: none;
-            }
-            
-            .button{
-                background-color: #4CAF50; /* Green */
-                border: none;
-                color: white;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                color:white;
-                width: 150px;
-            }
-
-            .button:hover{
-                opacity: 0.8;
-                transition: 1s;
-            }
-
-            .logo__text{
-                font-family: 'Cinzel', serif;
-                line-height: 0;
-                font-size: 24px;
-            }
-            
-
-            .header__header-wrapper{
-                justify-content: space-between;
-                flex-wrap: wrap;
-                display: flex;
-                gap: 15px;
-            }
-
-            .header__button-a{
-                color: white;
-            }
-
-            .header__user{
-                font-family: "Open Sans";
-            }
-            
-            .messages{
-                background-color: rgb(237, 238, 240);
-            }
-
-            .messages__wrapper{
-                display: flex;
-                flex-direction: column;
-                background-color: white;
-                width: 50%;
-                min-width: 340px;
-                margin:0 auto;
-            }
-
-            .message{
-                width: 200px;
-            }
-
-            .message--mine{
-                align-self: end;
-            }
-
-            .message__headline{
-                color:rgb(42, 88, 133);
-                font-family: 'Blinker';
-                font-weight: 700;
-                font-size: 16.5px;
-            }
-
-            .message__time{
-                color:rgb(129, 140, 153);
-                font-size: 16px;
-            }
-
-            .message__text{
-                font-family: 'Open Sans';
-            }
-        </style>
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <?php
                 use Illuminate\Support\Facades\Auth;
+                
         ?>
     </head>
     <body>
@@ -152,9 +67,18 @@
                         <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
                         <p class="message__text">Сообщение 1</p>
                     </article>
+                    <div class="send-message">
+                    <div class="send-message__wrapper">
+                            <form action="" class="send-message__form">
+                                <input class="send-message__input" name="message" id="message" type="text"  placeholder="Оставить сообщение...">
+                                <button type="submit" class="send-message__button">
+                                    <img class="send-message__button-img" src="{{ asset('img/right-arrow.png') }}" alt="">
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </body>
 </html>
