@@ -98,11 +98,24 @@ a{
     font-family: 'Blinker';
     font-weight: 700;
     font-size: 16.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .message__time{
     color:rgb(129, 140, 153);
     font-size: 16px;
+}
+
+.message__delete-button{
+    border:none;
+    background: none;
+}
+
+.message__red-cross{
+    width:15px;
+    height:15px;
 }
 
 .message__text{

@@ -47,5 +47,5 @@ Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login']);
 
 Route::name('comment.')->group(function(){
     Route::post('/comment/create', [\App\Http\Controllers\CommentController::class, 'create'])->name('create');
-    Route::post('/comment/delete');
+    Route::post('/comment/delete', [\App\Http\Controllers\CommentController::class, 'delete'])->name('delete');
 });

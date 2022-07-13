@@ -38,14 +38,25 @@
                 <div class="messages__wrapper">
                     <div class="messages__content">
                         @foreach ($allMessages as $message)
-                            <article class="message">
-                                <h1 class="message__headline">{{Message::find($message->id)->user->name}}
-                                     <time class="message__time"> 
+                            @if ($message->user_id == Auth::id())
+                                <article class="message message--mine">
+                            @endif
+                                    <h1 class="message__headline">{{Message::find($message->id)->user->name}}
+                                        <?php if(($message->user_id == Auth::id()) and (date_diff(new DateTime(), new DateTime($message->created_at))->days == 0)){?>
+                                            <form class="message__delete-form" action="{{ route('comment.delete') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="id" id="id" value="{{$message->id}} ">
+                                                <button class="message__delete-button" type="submit">
+                                                    <img class="message__red-cross" src="{{  asset('img/red-cross.svg')  }}">
+                                                </button>
+                                            </form>
+                                        <?php }; ?>
+                                    </h1>
+                                    <time class="message__time"> 
                                         {{$message->created_at}}
                                     </time>
-                                </h1>
-                                <p class="message__text">{{$message->message}}</p>
-                            </article>
+                                    <p class="message__text">{{$message->message}}</p>
+                                </article>
                         @endforeach
                     </div>
                     <div class="send-message">

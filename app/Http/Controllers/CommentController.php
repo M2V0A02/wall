@@ -21,7 +21,10 @@ class CommentController extends Controller
     }
 
     public function delete(Request $request){
-        Message::where('');
+        if (Message::find($request->id)->user->id == Auth::id())
+            Message::find($request->id)->delete();
+        
+        return redirect(route('welcome'));
     }
 
 }
