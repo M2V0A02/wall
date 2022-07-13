@@ -30,7 +30,7 @@ Route::name('user.')->group(function(){
 
 Route::get('/registration', function(){
     if(Auth::check()){
-        return redirect(route('welcome'));
+        return redirect(route('welcomeп'));
     }
     return view('registration');
 })->name('registration');
