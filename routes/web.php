@@ -1,8 +1,8 @@
 <?php
 
+use App\Models\Message;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $allMessages = Message::all();
+    return view('welcome', compact('allMessages'));
 })->name('welcome');
 
 Route::name('user.')->group(function(){
@@ -41,4 +42,10 @@ Route::get('/logout', function(){
 })->name('logout');
 
 Route::post('/registration', [\App\Http\Controllers\RegisterController::class, 'save']);
+
 Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login']);
+
+Route::name('comment.')->group(function(){
+    Route::post('/comment/create', [\App\Http\Controllers\CommentController::class, 'create'])->name('create');
+    Route::post('/comment/delete');
+});

@@ -5,10 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel</title>
         <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@700&Cinzel:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <?php
                 use Illuminate\Support\Facades\Auth;
-                
+                use App\Models\Message;   
         ?>
     </head>
     <body>
@@ -36,74 +37,21 @@
             <div class="messages">
                 <div class="messages__wrapper">
                     <div class="messages__content">
-                        <article class="message message--mine">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 15:33 </time></h1>
-                            <p class="message__text">Сообщение 1234</p>
-                        </article>
-                        <article class="message message--mine">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message message--mine">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 15:33 </time></h1>
-                            <p class="message__text">Сообщение 1234</p>
-                        </article>
-                        <article class="message message--mine">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
-                        <article class="message">
-                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                            <p class="message__text">Сообщение 1</p>
-                        </article>
+                        @foreach ($allMessages as $message)
+                            <article class="message">
+                                <h1 class="message__headline">{{Message::find($message->id)->user->name}}
+                                     <time class="message__time"> 
+                                        {{$message->created_at}}
+                                    </time>
+                                </h1>
+                                <p class="message__text">{{$message->message}}</p>
+                            </article>
+                        @endforeach
                     </div>
                     <div class="send-message">
                         <div class="send-message__wrapper">
-                            <form action="" class="send-message__form">
+                            <form action="{{ route('comment.create') }}" class="send-message__form" method="POST">
+                                @csrf
                                 <input class="send-message__input" name="message" id="message" type="text"  placeholder="Оставить сообщение...">
                                 <button type="submit" class="send-message__button">
                                     <img class="send-message__button-img" src="{{ asset('img/right-arrow.png') }}" alt="">
