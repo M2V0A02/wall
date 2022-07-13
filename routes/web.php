@@ -3,6 +3,7 @@
 use App\Models\Message;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,10 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    $allMessages = Message::all();
+    $allMessages = Message::paginate(15);
+    if (!isset($_GET['page'])){
+        return redirect('/?page=' . $allMessages->lastPage());
+    }
     return view('welcome', compact('allMessages'));
 })->name('welcome');
 

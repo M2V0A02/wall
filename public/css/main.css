@@ -64,6 +64,10 @@ a{
     padding: 15px;
 }
 
+.header__button--logout{
+    margin-top: 5px;
+}
+
 .header__button-a{
     color: white;
 }
@@ -84,7 +88,7 @@ a{
     flex-direction: column;
     background-color: white;
     width: 50%;
-    min-width: 340px;
+    min-width: 320px;
     margin:0 auto;
     padding: 15px 5px;
     margin-top: auto;
@@ -95,10 +99,12 @@ a{
     display: flex;
     flex-direction: column;
     overflow: overlay;
+    flex-grow: 1;
 }
 
 .message{
     width: 200px;
+    margin-top: auto;
 }
 
 .message--mine{
@@ -167,6 +173,7 @@ a{
 .send-message__button-img{
     height: 20px;
     opacity: 0.5;
+    margin-left: 5px;
 }
 
 .registration__wrapper{
@@ -208,3 +215,29 @@ a{
     margin: 0 auto;
 }
 
+.w-5{
+    width:20px;
+}
+
+.pagination{
+    margin: 15px auto;
+    padding: 0;
+}
+
+.pagination li{
+    list-style-type: none;
+    float: left;
+    margin-left: 10px;
+}
+
+.pagination li:first-child{
+    margin-left: 0px;
+}
+
+.pagination li span {
+    color: #000;
+}
+.pagination li a {
+    color: #000;
+    text-decoration: none;
+}

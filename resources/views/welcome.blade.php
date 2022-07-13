@@ -70,8 +70,9 @@
                             </form>
                         </div>
                     </div>
+                    {{ $allMessages->links('paginate') }}
                 </div>
-            </div>
+            </div> 
         </div>
     </body>
     <script type="text/javascript" src="{{ asset('js/main.js') }}" defer>
