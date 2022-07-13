@@ -35,40 +35,74 @@
             </header>
             <div class="messages">
                 <div class="messages__wrapper">
-                    <article class="message message--mine">
-                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 15:33 </time></h1>
-                        <p class="message__text">Сообщение 1234</p>
-                    </article>
-                    <article class="message message--mine">
-                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                        <p class="message__text">Сообщение 1</p>
-                    </article>
-                    <article class="message">
-                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                        <p class="message__text">Сообщение 1</p>
-                    </article>
-                    <article class="message">
-                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                        <p class="message__text">Сообщение 1</p>
-                    </article>
-                    <article class="message">
-                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                        <p class="message__text">Сообщение 1</p>
-                    </article>
-                    <article class="message">
-                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                        <p class="message__text">Сообщение 1</p>
-                    </article>
-                    <article class="message">
-                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                        <p class="message__text">Сообщение 1</p>
-                    </article>
-                    <article class="message">
-                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
-                        <p class="message__text">Сообщение 1</p>
-                    </article>
+                    <div class="messages__content">
+                        <article class="message message--mine">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 15:33 </time></h1>
+                            <p class="message__text">Сообщение 1234</p>
+                        </article>
+                        <article class="message message--mine">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message message--mine">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 15:33 </time></h1>
+                            <p class="message__text">Сообщение 1234</p>
+                        </article>
+                        <article class="message message--mine">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                        <article class="message">
+                            <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                            <p class="message__text">Сообщение 1</p>
+                        </article>
+                    </div>
                     <div class="send-message">
-                    <div class="send-message__wrapper">
+                        <div class="send-message__wrapper">
                             <form action="" class="send-message__form">
                                 <input class="send-message__input" name="message" id="message" type="text"  placeholder="Оставить сообщение...">
                                 <button type="submit" class="send-message__button">
@@ -81,4 +115,6 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="{{ asset('js/main.js') }}" defer>
+    </script>
 </html>
