@@ -4,13 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel</title>
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@700&Cinzel:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
         <style>
+            body{
+                margin:0;
+            }
+
             a{
                 text-transform: none;
                 text-decoration: none;
             }
-
+            
             .button{
                 background-color: #4CAF50; /* Green */
                 border: none;
@@ -35,6 +39,7 @@
                 font-size: 24px;
             }
             
+
             .header__header-wrapper{
                 justify-content: space-between;
                 flex-wrap: wrap;
@@ -49,7 +54,43 @@
             .header__user{
                 font-family: "Open Sans";
             }
+            
+            .messages{
+                background-color: rgb(237, 238, 240);
+            }
 
+            .messages__wrapper{
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                width: 50%;
+                min-width: 340px;
+                margin:0 auto;
+            }
+
+            .message{
+                width: 200px;
+            }
+
+            .message--mine{
+                align-self: end;
+            }
+
+            .message__headline{
+                color:rgb(42, 88, 133);
+                font-family: 'Blinker';
+                font-weight: 700;
+                font-size: 16.5px;
+            }
+
+            .message__time{
+                color:rgb(129, 140, 153);
+                font-size: 16px;
+            }
+
+            .message__text{
+                font-family: 'Open Sans';
+            }
         </style>
         <?php
                 use Illuminate\Support\Facades\Auth;
@@ -57,7 +98,6 @@
     </head>
     <body>
         <div class="container">
-            
             <header class="header">
                 <div class="header__header-wrapper">
                     <div class="logo">
@@ -78,14 +118,43 @@
                     </div>
                 </div>
             </header>
-        </div>
-        <div class="messages">
-            <div class="messages__wrapper">
-                <article class="messages__message">
-                    <h1 class="messages__headline-message">Егор давидов <time> 12.07.2022 </time></h1>
-                    <p class="messages__text-message">Сообщение 1</p>
-                </article>
+            <div class="messages">
+                <div class="messages__wrapper">
+                    <article class="message message--mine">
+                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 15:33 </time></h1>
+                        <p class="message__text">Сообщение 1234</p>
+                    </article>
+                    <article class="message message--mine">
+                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                        <p class="message__text">Сообщение 1</p>
+                    </article>
+                    <article class="message">
+                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                        <p class="message__text">Сообщение 1</p>
+                    </article>
+                    <article class="message">
+                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                        <p class="message__text">Сообщение 1</p>
+                    </article>
+                    <article class="message">
+                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                        <p class="message__text">Сообщение 1</p>
+                    </article>
+                    <article class="message">
+                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                        <p class="message__text">Сообщение 1</p>
+                    </article>
+                    <article class="message">
+                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                        <p class="message__text">Сообщение 1</p>
+                    </article>
+                    <article class="message">
+                        <h1 class="message__headline">Егор давидов <time class="message__time"> 12.07.2022 </time></h1>
+                        <p class="message__text">Сообщение 1</p>
+                    </article>
+                </div>
             </div>
+
         </div>
     </body>
 </html>
