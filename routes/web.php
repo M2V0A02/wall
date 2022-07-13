@@ -27,23 +27,23 @@ Route::name('user.')->group(function(){
         }
         return view('login');
     })->name('login');
+
+    Route::get('/registration', function(){
+        if(Auth::check()){
+            return redirect(route('welcome'));
+        }
+        return view('registration');
+    })->name('registration');
+    
+    Route::get('/logout', function(){
+        Auth::logout();
+        return redirect(route('welcome'));
+    })->name('logout');
+    
+    Route::post('/registration', [\App\Http\Controllers\RegisterController::class, 'save']);
+    
+    Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login']);
 });
-
-Route::get('/registration', function(){
-    if(Auth::check()){
-        return redirect(route('welcomeп'));
-    }
-    return view('registration');
-})->name('registration');
-
-Route::get('/logout', function(){
-    Auth::logout();
-    return redirect(route('welcome'));
-})->name('logout');
-
-Route::post('/registration', [\App\Http\Controllers\RegisterController::class, 'save']);
-
-Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login']);
 
 Route::name('comment.')->group(function(){
     Route::post('/comment/create', [\App\Http\Controllers\CommentController::class, 'create'])->name('create');

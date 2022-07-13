@@ -4,17 +4,33 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>Laravel</title>
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        <title>Регистрация</title>
     </head>
     <body>
         <div class="container">
-            <form action="{{ route('registration') }}" method="POST">
-                @csrf
-                <input name="name" id="name" type="text">
-                <input name="email" id="email" type="email">
-                <input name="password" id="password" type="password">
-                <button type="submit">Войти</button>
-            </form>
+            <div class="registration">
+                <div class="registration__wrapper">
+                <h1 class="registration__headline">Регистрация</h1>
+                    <form class="registration__form-registration" action="{{ route('user.registration') }}" method="POST">
+                        @csrf
+                        <input class="input" name="name" id="name" type="text" placeholder="Имя">
+                        @error('name')
+                        <p class="registration__error">{{$message}}</p>
+                        @enderror
+                        <input class="input" name="email" id="email" type="email" placeholder="Емайл">
+                        @error('email')
+                        <p class="registration__error">{{$message}}</p>
+                        @enderror
+                        <input class="input" name="password" id="password" type="password" placeholder="Пароль">
+                        @error('password')
+                        <p class="registration__error">{{$message}}</p>
+                        @enderror
+                        <button class="registration__button button" type="submit">зарегистрироваться</button>
+                        
+                    </form>
+                </div>
+            </div>
         </div>
     </body>
 </html>

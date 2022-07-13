@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>Стена</title>
         <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@700&Cinzel:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
@@ -20,9 +20,9 @@
                         <p class="logo__text">WALL</p>
                     </div>
                     <div class="header__buttons-wrapper">
-                        <button class="header__button--sign-up button"><a class="header__button-a" href="{{ route('registration') }}">Регистрация</a></button>
+                        <button class="header__button--sign-up button"><a class="header__button-a" href="{{ route('user.registration') }}">Регистрация</a></button>
                         <button class="header__button--login button"><a class="header__button-a" href="{{ route('user.login') }}">Авторизация</a></button>
-                        <button class="header__button--logout button"><a class="header__button-a" href="{{ route('logout') }}">Выйти</a></button>
+                        <button class="header__button--logout button"><a class="header__button-a" href="{{ route('user.logout') }}">Выйти</a></button>
                         <span class="header__user">
                             <?php
                                 if (Auth::check())

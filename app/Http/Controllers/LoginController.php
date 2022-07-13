@@ -14,7 +14,9 @@ class LoginController extends Controller
         if(Auth::attempt($formFields)){
             return redirect(route('welcome'));
         }
-        DD($formFields);
+        return redirect(route('user.login'))->withErrors([
+            'authError' => 'Неправильный логин или пароль'
+        ]);
     }
     
 }

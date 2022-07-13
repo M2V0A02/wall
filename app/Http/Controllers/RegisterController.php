@@ -23,9 +23,8 @@ class RegisterController extends Controller
             Auth::login($user);
             return redirect(route('welcome'));
         }
-
-        return redirect(route('registration'));
-
+        return redirect(route('registration'))->withErrors([
+            'formError' => 'Ошибка регистрации']);
     }
 
     

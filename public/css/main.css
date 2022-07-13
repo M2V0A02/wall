@@ -27,6 +27,18 @@ a{
     width: 150px;
 }
 
+.input{
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    color:white;
+    width: 150px;
+    background: darkgray;
+}
+
 .button:hover{
     opacity: 0.8;
     transition: 1s;
@@ -156,3 +168,43 @@ a{
     height: 20px;
     opacity: 0.5;
 }
+
+.registration__wrapper{
+    margin:0 auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.registration__form-registration{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin:0 auto
+}
+
+.registration__button{
+    margin: 0 auto;
+    width: auto !important;
+}
+
+.login__wrapper{
+    margin:0 auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.login__form-login{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin:0 auto
+}
+
+.login__button{
+    margin: 0 auto;
+}
+

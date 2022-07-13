@@ -17,7 +17,7 @@ class CommentController extends Controller
             $message->save();
         }
         
-        return redirect(route('welcome'));
+        return redirect(route('user.login'));
     }
 
     public function delete(Request $request){
