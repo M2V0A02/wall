@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Message;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    $allMessages = Message::paginate(20);
+    $allMessages = \App\Models\Message::paginate(20);
     if (!isset($_GET['page'])){
         return redirect('/?page=' . $allMessages->lastPage());
     }
