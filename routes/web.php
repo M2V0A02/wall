@@ -1,5 +1,5 @@
 <?php
-
+namespace App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
