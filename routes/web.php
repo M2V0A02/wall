@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    $allMessages = Message::paginate(15);
+    $allMessages = Message::paginate(20);
     if (!isset($_GET['page'])){
         return redirect('/?page=' . $allMessages->lastPage());
     }

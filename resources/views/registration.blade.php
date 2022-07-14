@@ -23,6 +23,7 @@
                         <p class="registration__error">{{$message}}</p>
                         @enderror
                         <input class="input" name="password" id="password" type="password" placeholder="Пароль">
+                        <input class="input" type="password"  id="password_confirmation" name="password_confirmation" placeholder="Подвердите пароль">
                         @error('password')
                         <p class="registration__error">{{$message}}</p>
                         @enderror
