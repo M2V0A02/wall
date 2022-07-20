@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DateTime;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Message;
@@ -21,7 +21,7 @@ class CommentController extends Controller
     }
 
     public function delete(Request $request){
-        if (Message::find($request->id)->user->id == Auth::id())
+        if (Message::find($request->id)->user->id == Auth::id() and (date_diff(new DateTime(), new DateTime(Message::find($request->id)->created_at))->days == 0))
             Message::find($request->id)->delete();
         
         return redirect(route('welcome'));
