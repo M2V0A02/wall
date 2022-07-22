@@ -13,9 +13,10 @@ class Controller extends BaseController
 
     public function welcome(){
         $allMessages = \App\Models\Message::paginate(20);
-        if (!isset($_GET['page'])){
+        if (!isset($_GET['page']))
             return redirect('/?page=' . $allMessages->lastPage());
-        }
+        if (!is_numeric($_GET['page']))
+            return redirect('/?page=' . $allMessages->lastPage());
         return view('welcome', compact('allMessages'));
     }
 }
