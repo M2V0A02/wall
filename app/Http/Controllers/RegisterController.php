@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
+
+    public function registration(){
+        if(Auth::check()){
+            return redirect(route('welcome'));
+        }
+        return view('registration');
+    }
+    
     public function save(Request $request){
         $validateFields = $request->validate([
             'name' => 'required|unique:users',

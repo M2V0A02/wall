@@ -8,7 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function login(Request $request){
+    public function login(){
+        if(Auth::check()){
+            return redirect(route('welcome'));
+        }
+        return view('login');
+    }
+
+    public function postLogin(Request $request){
         $formFields = $request->only(['name', 'password']);
 
         if(Auth::attempt($formFields)){
@@ -19,4 +26,9 @@ class LoginController extends Controller
         ]);
     }
     
+    public function logout(){
+        Auth::logout();
+        return redirect(route('welcome'));
+    }
+
 }
