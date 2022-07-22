@@ -20,9 +20,13 @@
                         <p class="logo__text">WALL</p>
                     </div>
                     <div class="header__buttons-wrapper">
+                        @if (!Auth::check())
                         <button class="header__button--sign-up button"><a class="header__button-a" href="{{ route('user.registration') }}">Регистрация</a></button>
                         <button class="header__button--login button"><a class="header__button-a" href="{{ route('user.login') }}">Авторизация</a></button>
+                        @endif
+                        @if (Auth::check())
                         <button class="header__button--logout button"><a class="header__button-a" href="{{ route('user.logout') }}">Выйти</a></button>
+                        @endif
                         <span class="header__user">
                             <?php
                                 if (Auth::check())
