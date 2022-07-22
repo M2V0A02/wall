@@ -59,17 +59,20 @@
                                 </article>
                         @endforeach
                     </div>
-                    <div class="send-message">
-                        <div class="send-message__wrapper">
-                            <form action="{{ route('comment.create') }}" class="send-message__form" method="POST">
-                                @csrf
-                                <input class="send-message__input" name="message" id="message" type="text"  placeholder="Оставить сообщение...">
-                                <button type="submit" class="send-message__button">
-                                    <img class="send-message__button-img" src="{{ asset('img/right-arrow.png') }}" alt="">
-                                </button>
-                            </form>
+                    @if (Auth::check())
+                        <div class="send-message">
+                            <div class="send-message__wrapper">
+                                <form action="{{ route('comment.create') }}" class="send-message__form" method="POST">
+                                    @csrf
+                                    <input class="send-message__input" name="message" id="message" type="text"  placeholder="Оставить сообщение...">
+                                    <button type="submit" class="send-message__button">
+                                        <img class="send-message__button-img" src="{{ asset('img/right-arrow.png') }}" alt="">
+                                    </button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
+                    @endif
+                    
                     {{ $allMessages->links('paginate') }}
                 </div>
             </div> 
