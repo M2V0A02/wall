@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use json;
 use DateTime;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -9,6 +10,15 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
+
+    public function getComments(){
+        return response()->json(Message::get(), 200);
+    }
+    
+    public function getCommentById($id){
+        return response()->json(Message::find($id), 200);
+    }
+
     public function create(Request $request){
         if (Auth::check()){
             $message = new Message;
